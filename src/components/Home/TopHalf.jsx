@@ -85,7 +85,7 @@ const TopHalf = () => {
               <motion.circle 
                 cx="32"
                 cy="32"
-                r="32"
+                r={32}
                 variants={circleVariants}
                 strokeLinecap="round"
                 fill="transparent"
@@ -109,8 +109,8 @@ const TopHalf = () => {
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
-                .typeString(`<span>connorunderwood.</span>`)
-                .typeString(`<span class="text-primary">info()</span>`)
+                .typeString(`<span>./connorunderwood/</span>`)
+                .typeString(`<span class="text-primary">info</span>`)
                 .start();
               }}
             />
