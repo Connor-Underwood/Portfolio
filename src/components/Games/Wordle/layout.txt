@@ -1,0 +1,5 @@
+Hierarchy:
+- Keyboard
+    - Key
+        - Event listener that changes its color when key is pressed
+        - All keys mapped to form keyboard
