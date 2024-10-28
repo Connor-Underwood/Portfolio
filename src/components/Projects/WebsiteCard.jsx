@@ -27,7 +27,7 @@ const WebsiteCard = ({project}) => {
                     <div className='rounded-full bg-white w-9 h-9 grid place-items-center'>
                         <img 
                             src={project.image}
-                            className='w-6 h-6'
+                            className='w-6 h-6 object-contain'
                         />
                     </div>
                 </div>
@@ -47,6 +47,13 @@ const WebsiteCard = ({project}) => {
                         {project.linkPreview}
                     </p>
                 </a>
+                <div className='flex gap-2 items-center z-10 relative select-none'>
+                    {project.tags.map((tag) => (
+                        <div className='text-xs px-2 py-1 font-semibold bg-gray-100 dark:bg-gray-900 text-gray-500 dark:text-gray-600 rounded-lg'>
+                            {tag}
+                        </div>
+                    ))}
+                </div>
 
             </div>
         </div>

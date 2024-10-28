@@ -72,7 +72,7 @@ const BottomHalf = () => {
                                     
                                 >
                                     <div className='w-1 bg-indigo-500 h-8' />
-                                    <p className='font-bold text-3xl'>Projects</p>
+                                    <p className='font-bold text-3xl'>Portfolio</p>
                                     
                                 </motion.div>
 

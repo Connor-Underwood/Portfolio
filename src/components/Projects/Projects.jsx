@@ -2,22 +2,25 @@ import React, { useState } from 'react'
 
 import { motion } from 'framer-motion'
 
-import {websites} from "./websites"
+import {swe_projects} from "./sweprojects"
 import {mlprojects} from "./mlprojects"
-
+import {internships} from "./internships"
+import { research } from './research'
 import WebsiteCard from './WebsiteCard'
 import MLCard from './MLCard'
 
 const tabs = [
-    {title: 'Websites', icon: 'fas fa-code'},
-    {title: 'Machine Learning', icon: 'fas fa-brain'}
+    {title: 'Internships', icon: 'fas fa-briefcase'},
+    {title: 'Research', icon: 'fas fa-flask'},
+    {title: 'Software Engineering', icon: 'fas fa-code'},
+    {title: 'Machine Learning', icon: 'fas fa-brain'},
 ]
 
 
 
 const Projects = () => {
 
-    const [selected, setSelected] = useState("Websites")
+    const [selected, setSelected] = useState("Software Engineering")
 
     return (
         <div>
@@ -36,11 +39,10 @@ const Projects = () => {
                 ))}
                 
             </div>
-            {selected === 'Websites' ?
-                <motion.div 
+            {selected == 'Internships' && <motion.div 
                     className='grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 p-6'
                 >
-                    {websites.map((project, idx) => (
+                    {internships.map((project, idx) => (
                         <motion.div
                             key={project.title}
                             initial={{opacity: 0, scale: 0.5, y: 10}}
@@ -50,8 +52,39 @@ const Projects = () => {
                             <WebsiteCard project={project} />
                         </motion.div>
                     ))}
-                </motion.div>
-                :
+                </motion.div>}
+                {selected === 'Research' &&
+                <motion.div 
+                    className='grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 p-6'
+                >
+                    {research.map((project, idx) => (
+                        <motion.div
+                            key={project.title}
+                            initial={{opacity: 0, scale: 0.5, y: 10}}
+                            animate={{opacity: 1, scale: 1, y: 0}}
+                            transition={{duration: 0.4, delay: 0.2 + 0.2 * idx}}
+                        >
+                            <WebsiteCard project={project} />
+                        </motion.div>
+                    ))}
+                </motion.div>}
+            {selected === 'Software Engineering' &&
+                <motion.div 
+                    className='grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 p-6'
+                >
+                    {swe_projects.map((project, idx) => (
+                        <motion.div
+                            key={project.title}
+                            initial={{opacity: 0, scale: 0.5, y: 10}}
+                            animate={{opacity: 1, scale: 1, y: 0}}
+                            transition={{duration: 0.4, delay: 0.2 + 0.2 * idx}}
+                        >
+                            <WebsiteCard project={project} />
+                        </motion.div>
+                    ))}
+                </motion.div>}
+                
+                {selected === 'Machine Learning' &&
                 <motion.div 
                     className='grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 p-6'
                 >
@@ -62,12 +95,14 @@ const Projects = () => {
                             animate={{opacity: 1, scale: 1, y: 0}}
                             transition={{duration: 0.4, delay: 0.2 + 0.2 * idx}}
                         >
-                            <MLCard project={project} />
+                            <WebsiteCard project={project} />
                         </motion.div>
                     ))}
-                </motion.div>
+                </motion.div>}
 
-            }
+               
+               
+            
             
         </div>
     )

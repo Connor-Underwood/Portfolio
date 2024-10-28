@@ -7,7 +7,7 @@ import {containerVariant, textVariant, navVariant} from "../utils/variants"
 const Navbar = () => {
 
     const links = [
-        {name: 'Projects', id: "projects", icon: <CollectionIcon className='w-6 h-6 hidden md:block' />},
+        {name: 'Portfolio', id: "projects", icon: <CollectionIcon className='w-6 h-6 hidden md:block' />},
         {name: 'Experience', id: "experience", icon: <ClipboardListIcon className='w-6 h-6 hidden md:block' />},
     ]
 
