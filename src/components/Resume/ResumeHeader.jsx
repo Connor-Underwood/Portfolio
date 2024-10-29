@@ -3,24 +3,24 @@ export default function ResumeHeader() {
     const contactInfo = [
         {
             icon: <MailIcon className='w-4 h-4 text-indigo-500' />,
-            text: "cfarber@purdue.edu"
+            text: "underw23@purdue.edu"
         },
         {
             icon: <LinkIcon className="w-4 h-4 text-indigo-500" />,
-            text: "chrisfarbs.com"
+            text: "localhost:3000"
         },
         {
             icon: <PhoneIcon className="w-4 h-4 text-indigo-500" />,
-            text: "915-490-6814"
+            text: "815-405-2483"
         },
         {
             icon: <CodeIcon className="w-4 h-4 text-indigo-500" />,
-            text: "github.com/farbs03"
+            text: "github.com/Connor-Underwood"
         }
     ]
     return (
         <div className='flex justify-between items-center'>
-            <p className="font-bold text-[16px]">Christopher Farber</p>
+            <p className="font-bold text-[16px]">Connor Underwood</p>
             {contactInfo.map((contact) => (
                 <div className="flex items-center gap-1">
                     {contact.icon}

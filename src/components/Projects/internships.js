@@ -37,7 +37,7 @@ export const internships = [
       linkPreview: "jd-finish-line.com",
       description:
         "Ex-Data Science Intern at JD Finish Line under the inventory and product out-source team.",
-      tags: ["Node JS", "Google Cloud", "API"],
+      tags: ["Python", "Tensorflow", "Google Vertex AI"],
     },
     
     

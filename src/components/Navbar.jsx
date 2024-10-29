@@ -8,7 +8,7 @@ const Navbar = () => {
 
     const links = [
         {name: 'Portfolio', id: "projects", icon: <CollectionIcon className='w-6 h-6 hidden md:block' />},
-        {name: 'Experience', id: "experience", icon: <ClipboardListIcon className='w-6 h-6 hidden md:block' />},
+        {name: 'Resume', id: "experience", icon: <ClipboardListIcon className='w-6 h-6 hidden md:block' />},
     ]
 
     

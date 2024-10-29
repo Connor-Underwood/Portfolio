@@ -20,7 +20,7 @@ const tabs = [
 
 const Projects = () => {
 
-    const [selected, setSelected] = useState("Software Engineering")
+    const [selected, setSelected] = useState("Internships")
 
     return (
         <div>

@@ -6,19 +6,19 @@ const PDFExperiment = () => {
     const contactInfo = [
         {
             icon: <MailIcon className='w-4 h-4 text-indigo-500' />,
-            text: "cfarber@purdue.edu"
+            text: "underw23@purdue.edu"
         },
         {
             icon: <LinkIcon className="w-4 h-4 text-indigo-500" />,
-            text: "chrisfarbs.com"
+            text: "localhost:3000"
         },
         {
             icon: <PhoneIcon className="w-4 h-4 text-indigo-500" />,
-            text: "915-490-6814"
+            text: "815-405-2483"
         },
         {
             icon: <CodeIcon className="w-4 h-4 text-indigo-500" />,
-            text: "github.com/farbs03"
+            text: "github.com/Connor-Underwood"
         }
     ]
 
@@ -35,7 +35,7 @@ const PDFExperiment = () => {
         <Document>
             <Page style={styles.page}>
                 <Text style={styles.header}>
-                    <Text style={styles.name}>Christopher Farber</Text>
+                    <Text style={styles.name}>Connor Underwood</Text>
                     {contactInfo.map((contact) => (
                         <Text key={contact.text} style={styles.contact}>
                             <Text>{contact.text}</Text>

@@ -9,12 +9,12 @@ export default function Settings({open, setOpen}) {
     var darkModeStatus = false;
 
     if(typeof window !== 'undefined')
-        darkModeStatus = JSON.parse(localStorage.getItem('chrisfarbs-dark'))
+        darkModeStatus = JSON.parse(localStorage.getItem('connor-underwood-dark'))
     
     //stores dark mode preferences in local storage
     useEffect(() => {
         if(!darkModeStatus) {
-            localStorage.setItem('chrisfarbs-dark', JSON.stringify(false))
+            localStorage.setItem('connor-underwood-dark', JSON.stringify(false))
         }
         else {
             setDarkMode(darkModeStatus)
@@ -31,7 +31,7 @@ export default function Settings({open, setOpen}) {
     const toggleDarkMode = () => {
         const newVal = !darkMode
         setDarkMode(newVal)
-        localStorage.setItem('chrisfarbs-dark', JSON.stringify(newVal))
+        localStorage.setItem('connor-underwood-dark', JSON.stringify(newVal))
 
         if (newVal === true) {
             document.documentElement.classList.add('dark')

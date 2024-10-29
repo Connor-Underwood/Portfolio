@@ -4,6 +4,7 @@ import Bash from '../../assets/bash.png'
 import Assembly from '../../assets/assembly.jpg'
 import Compiler from '../../assets/compiler.png'
 import Football from '../../assets/football.png'
+import Logo from '../../assets/logo.png'
 
 export const swe_projects = [
   // Want to add github link for oCEANIC
@@ -17,6 +18,28 @@ export const swe_projects = [
     color: "group-hover:text-sky-500",
     bg: "bg-gradient-to-tr from-white to-sky-500 shadow-violet-500/20",
     tags: ["Golang", "NextJS", "Typescript", "Tensorflow", "MongoDB"],
+  },
+  {
+    image: Logo,
+    href: "https://github.com/Connor-Underwood/Portfolio",
+    linkPreview: "portfolio.app",
+    title: "Portfolio Website",
+    description:
+      "My own portfolio website built in ReactJS! One-stop shop to learn all about me.",
+    color: "group-hover:text-sky-500",
+    bg: "bg-gradient-to-tr from-white to-sky-500 shadow-violet-500/20",
+    tags: ["ReactJS", "Javascript"],
+  },
+  {
+    image: Compiler,
+    href: "https://github.com/Connor-Underwood/NaiveC_Compiler",
+    linkPreview: "c-compiler.app",
+    title: "C Language Compiler",
+    description:
+      "A simple C compiler built to compile a subset of the entire C language.",
+    color: "group-hover:text-yellow-500",
+    bg: "bg-gradient-to-tr from-yellow-200 to-rose-300 shadow-rose-300/20",
+    tags: ["C/C++", "Lex", "Yacc"],
   },
   {
     image: Globe,
@@ -50,16 +73,5 @@ export const swe_projects = [
     color: "group-hover:text-emerald-500",
     bg: "bg-gradient-to-tr from-emerald-500 to-indigo-500 shadow-emerald-500/20",
     tags: ["C/C++", "x86-64 AT&T Assembly"],
-  },
-  {
-    image: Compiler,
-    href: "https://github.com/Connor-Underwood/NaiveC_Compiler",
-    linkPreview: "c-compiler.app",
-    title: "C Language Compiler",
-    description:
-      "A simple C compiler built to compile a subset of the entire C language.",
-    color: "group-hover:text-yellow-500",
-    bg: "bg-gradient-to-tr from-yellow-200 to-rose-300 shadow-rose-300/20",
-    tags: ["Python", "NLP", "Sentiment Analysis"],
   },
 ];

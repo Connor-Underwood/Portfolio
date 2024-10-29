@@ -25,7 +25,7 @@ const BottomHalf = () => {
     var darkModeStatus = false;
 
     if(typeof window !== 'undefined')
-        darkModeStatus = JSON.parse(localStorage.getItem('chrisfarbs-dark'))
+        darkModeStatus = JSON.parse(localStorage.getItem('connor-underwood-dark'))
     
     useEffect(() => {
         if(darkModeStatus) {
@@ -104,7 +104,7 @@ const BottomHalf = () => {
                                     transition={{duration: 0.4, delay: 0.2}}
                                     
                                 >
-                                    <p className='font-bold text-3xl'>Experience</p>
+                                    <p className='font-bold text-3xl'>Resume</p>
                                     <div className='w-1 bg-indigo-500 h-8' />
                                 </motion.div>
                                 <motion.div
