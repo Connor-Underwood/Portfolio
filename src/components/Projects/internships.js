@@ -2,7 +2,28 @@ import oCEANIC from '../../assets/oCEANIC.png'
 import Wabash from '../../assets/wabash.png'
 import AmazonWholeFoods from '../../assets/amazon.png'
 import FinishLine from '../../assets/jd.png'
+import Google from '../../assets/google.webp'
+import Microsoft from '../../assets/microsoft.png'
+
 export const internships = [
+    {
+      image: Google,
+      title: "Software Engineer Intern",
+      href: "https://labs.google.com/search/",
+      linkPreview: "google-search.com",
+      description:
+        "AI Mode @ Google Search",
+      tags: ["Java, Swift"]
+    },
+    {
+      image: Microsoft,
+      title: "Data Scientist Intern",
+      href: "https://microsoft.ai/",
+      linkPreview: "microsoft.ai",
+      description: 
+        "Agentic AI @ MAI",
+      tags: ["Python, Databricks, Claude, ChatGPT, DeepSeek"]
+    },
     {
         image: Wabash,
         title: "Project Management Intern",

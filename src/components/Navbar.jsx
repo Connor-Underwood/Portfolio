@@ -11,9 +11,6 @@ const Navbar = () => {
         {name: 'Resume', id: "experience", icon: <ClipboardListIcon className='w-6 h-6 hidden md:block' />},
     ]
 
-    
-
-
     return (
         <motion.div variants={containerVariant} initial="hidden" animate="show" className={`text-white top-0 z-50 w-full`}>
             <motion.div variants={textVariant} className='flex items-center justify-between p-6'>
@@ -21,14 +18,16 @@ const Navbar = () => {
                     src={Logo}
                     alt="logo"
                     style={{
-                        width: "75px",
-                        height: "75px",
+                        width: "100px",
+                        height: "100px",
                         padding: "0px"
                     }}
                     initial={{y: -2}}
                     animate={{y: 2}}
                     transition={{duration: 0.85, yoyo: Infinity}}
                 />
+
+                
 
                 <motion.div variants={containerVariant} className='flex items-center gap-4 w-fit'>
                     {links.map((link) => (

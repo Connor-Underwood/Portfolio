@@ -17,7 +17,7 @@ const Resume = () => {
                     </p>
                 </button>
             </a>
-            <img className="max-w-2xl mx-auto rounded-lg" src="./Connor_Underwood_2024_Resume-1.png" alt="resume" />
+            <img className="max-w-2xl mx-auto rounded-lg" src="./Connor_Underwood_2026_Resume.png" alt="resume" />
             
                       
             
