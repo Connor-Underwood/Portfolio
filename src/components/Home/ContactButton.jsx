@@ -8,7 +8,7 @@ const ContactButton = ({contact, idx}) => {
             transition={{duration: 0.2, delay: 1.2 + 0.2 * idx}}
             key={contact.Name}
         >
-            <a href={contact.Link} target="_blank">
+            <a href={contact.Link} target="_blank" rel="noreferrer">
                 <motion.div 
                     className='w-14 h-14 text-primary rounded-full color-indigo-500 border-2 border-primary inline-flex flex-shrink-0 justify-center items-center hover:shadow-md hover:shadow-indigo-500/50'
                     initial={{y: 0}}

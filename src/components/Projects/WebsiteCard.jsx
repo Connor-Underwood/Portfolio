@@ -40,7 +40,7 @@ const WebsiteCard = ({project}) => {
                     {project.description}
                 </p>
                 
-                <a href={project.href} target="_blank" className={`flex gap-2 items-center w-fit transition duration-150 ease-in ${project.color}`}>
+                <a href={project.href} target="_blank" rel="noreferrer" className={`flex gap-2 items-center w-fit transition duration-150 ease-in ${project.color}`}>
                     <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
                     <LinkIcon className='w-5 h-5' />
                     <p className='font-semibold line-clamp-1 text-sm'>

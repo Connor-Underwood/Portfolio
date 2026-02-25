@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { motion } from 'framer-motion'
 
@@ -7,7 +7,6 @@ import {mlprojects} from "./mlprojects"
 import {internships} from "./internships"
 import { research } from './research'
 import WebsiteCard from './WebsiteCard'
-import MLCard from './MLCard'
 
 const tabs = [
     {title: 'Internships', icon: 'fas fa-briefcase'},

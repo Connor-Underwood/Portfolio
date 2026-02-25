@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import Logo from "../assets/logo.png"
 import {ClipboardListIcon, CollectionIcon } from "@heroicons/react/outline"
-import {containerVariant, textVariant, navVariant} from "../utils/variants"
+import {containerVariant, textVariant } from "../utils/variants"
 
 const Navbar = () => {
 
