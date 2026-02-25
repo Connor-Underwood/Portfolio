@@ -144,7 +144,7 @@ const TopHalf = () => {
             className='max-w-2xl text-center mx-auto my-6 md:text-lg'
           >
             <p className='font-semibold text-2xl'>About Me</p>
-            <p className='my-2'>Hi, I'm Connor! I'm a junior at Purdue University studying a double major in Computer Science & Data Science.</p>
+            <p className='my-2'>Hi, I'm Connor! I'm an engineer at Google and make social media content.</p>
           </motion.div>
         </div>
       </div>
