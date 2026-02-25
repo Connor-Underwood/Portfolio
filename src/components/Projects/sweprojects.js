@@ -10,7 +10,7 @@ export const swe_projects = [
   // Want to add github link for oCEANIC
   {
     image: Football,
-    href: "http://localhost:3000/",
+    href: "",
     linkPreview: "source.app",
     title: "WalkOff Fantasy",
     description:
