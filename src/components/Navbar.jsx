@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
-import { motion, useViewportScroll } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Logo from "../assets/logo.png"
-import {ClipboardListIcon, CogIcon, CollectionIcon, NewspaperIcon} from "@heroicons/react/outline"
+import {ClipboardListIcon, CollectionIcon } from "@heroicons/react/outline"
 import {containerVariant, textVariant, navVariant} from "../utils/variants"
 
 const Navbar = () => {

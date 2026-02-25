@@ -1,4 +1,3 @@
-import { LinkIcon } from "@heroicons/react/solid";
 
 const MLCard = ({project}) => {
     return (

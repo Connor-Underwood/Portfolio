@@ -1,12 +1,11 @@
-import React, {useState, useEffect} from "react"
+import {useState, useEffect} from "react"
 
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import Resume from "../Resume/Resume";
 import Projects from "../Projects/Projects";
 
-import Wave from "react-wavify";
 
 const BottomHalf = () => {
 
