@@ -5,11 +5,17 @@ import { useInView } from 'react-intersection-observer';
 
 import Resume from "../Resume/Resume";
 import Projects from "../Projects/Projects";
+import Mentorship from "../Mentorship/Mentorship";
 
 
 const BottomHalf = () => {
 
     const [projectsRef, projectsInView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-80px 0px',
+    });
+
+    const [mentorshipRef, mentorshipInView] = useInView({
         triggerOnce: true,
         rootMargin: '-80px 0px',
     });
@@ -87,9 +93,39 @@ const BottomHalf = () => {
                             <div className='h-40' />
                         }
                         
-                    </div>                    
-                    
-                    <div 
+                    </div>
+
+                    <div
+                        ref={mentorshipRef}
+                        className='mt-20'
+                        id="mentorship"
+                    >
+                        {mentorshipInView ?
+                            <>
+                                <motion.div
+                                    className='my-4 text-right flex justify-right items-center ml-auto w-fit gap-4'
+                                    initial={{opacity: 0, x: 50}}
+                                    animate={{opacity: 1, x: 0}}
+                                    transition={{duration: 0.4, delay: 0.2}}
+                                >
+                                    <p className='font-bold text-3xl'>Mentorship</p>
+                                    <div className='w-1 bg-indigo-500 h-8' />
+                                </motion.div>
+
+                                <motion.div
+                                    initial={{opacity: 0}}
+                                    animate={{opacity: 1, x: 0}}
+                                    transition={{duration: 0.4, delay: 0.4}}
+                                >
+                                    <Mentorship />
+                                </motion.div>
+                            </>
+                            :
+                            <div className='h-96' />
+                        }
+                    </div>
+
+                    <div
                         ref={experienceRef}
                         className='mt-20'
                         id="experience"
@@ -97,14 +133,14 @@ const BottomHalf = () => {
                         {experienceInView ?
                             <>
                                 <motion.div 
-                                    className='my-4 text-right flex justify-right items-center ml-auto w-fit gap-4'
+                                    className='my-4 flex  items-center mr-auto w-fit gap-4'
                                     initial={{opacity: 0, x: 50}}
                                     animate={{opacity: 1, x: 0}}
                                     transition={{duration: 0.4, delay: 0.2}}
                                     
                                 >
-                                    <p className='font-bold text-3xl'>Resume</p>
                                     <div className='w-1 bg-indigo-500 h-8' />
+                                    <p className='font-bold text-3xl'>Resume</p>
                                 </motion.div>
                                 <motion.div
                                     initial={{opacity: 0, y: 50}}

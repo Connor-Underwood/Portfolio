@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion'
 import Logo from "../assets/logo.png"
-import {ClipboardListIcon, CollectionIcon } from "@heroicons/react/outline"
+import {ClipboardListIcon, CollectionIcon, AcademicCapIcon } from "@heroicons/react/outline"
 import {containerVariant, textVariant } from "../utils/variants"
 
 const Navbar = () => {
 
     const links = [
         {name: 'Portfolio', id: "projects", icon: <CollectionIcon className='w-6 h-6 hidden md:block' />},
+        {name: 'Mentorship', id: "mentorship", icon: <AcademicCapIcon className='w-6 h-6 hidden md:block' />},
         {name: 'Resume', id: "experience", icon: <ClipboardListIcon className='w-6 h-6 hidden md:block' />},
     ]
 
