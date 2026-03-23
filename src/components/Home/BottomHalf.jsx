@@ -60,7 +60,7 @@ const BottomHalf = () => {
 
             <div>
                 
-                <div className='max-w-7xl mx-auto p-6'>
+                <div className='max-w-7xl mx-auto p-4 sm:p-6'>
                     
                     <div 
                         id='projects' 
@@ -77,7 +77,7 @@ const BottomHalf = () => {
                                     
                                 >
                                     <div className='w-1 bg-indigo-500 h-8' />
-                                    <p className='font-bold text-3xl'>Portfolio</p>
+                                    <p className='font-bold text-xl sm:text-2xl md:text-3xl'>Portfolio</p>
                                     
                                 </motion.div>
 
@@ -108,7 +108,7 @@ const BottomHalf = () => {
                                     animate={{opacity: 1, x: 0}}
                                     transition={{duration: 0.4, delay: 0.2}}
                                 >
-                                    <p className='font-bold text-3xl'>Mentorship</p>
+                                    <p className='font-bold text-xl sm:text-2xl md:text-3xl'>Mentorship</p>
                                     <div className='w-1 bg-indigo-500 h-8' />
                                 </motion.div>
 
@@ -140,7 +140,7 @@ const BottomHalf = () => {
                                     
                                 >
                                     <div className='w-1 bg-indigo-500 h-8' />
-                                    <p className='font-bold text-3xl'>Resume</p>
+                                    <p className='font-bold text-xl sm:text-2xl md:text-3xl'>Resume</p>
                                 </motion.div>
                                 <motion.div
                                     initial={{opacity: 0, y: 50}}

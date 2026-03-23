@@ -21,9 +21,9 @@ const TopHalf = () => {
           mouseControls: true,
           touchControls: true,
           gyroControls: false,
-          minHeight: 420.00,
+          minHeight: 200.00,
           scale: 1.00,
-          scaleMobile: 1.00,
+          scaleMobile: 0.75,
           color: "#40E0D0", // Adjust to your desired color
           backgroundColor: "#111127", // Adjust to your desired background color
           quantity: 3,
@@ -70,8 +70,8 @@ const TopHalf = () => {
       
       <div className='z-10 flex-grow grid place-items-center'>
         <div className='max-w-7xl mx-auto justify-center text-center text-white p-4 z-10'>
-          <motion.div 
-            className='w-64 z-0 aspect-square relative grid place-items-center rounded-full mx-auto shadow-lg shadow-indigo-500/50'
+          <motion.div
+            className='w-48 sm:w-56 md:w-64 z-0 aspect-square relative grid place-items-center rounded-full mx-auto shadow-lg shadow-indigo-500/50'
             initial={{opacity: 0, y: 10}} 
             animate={{opacity: 1, y: 0}} 
             transition={{duration: 0.4, delay: 0.4}}
@@ -104,7 +104,7 @@ const TopHalf = () => {
           </motion.div>
           
           
-          <div className='text-3xl md:text-4xl font-bold text-center my-4 flex justify-center font-mono'>
+          <div className='text-2xl sm:text-3xl md:text-4xl font-bold text-center my-4 flex justify-center font-mono'>
             <span className={`mr-1 text-primary`}>$</span>
             <Typewriter
               onInit={(typewriter) => {
@@ -123,7 +123,7 @@ const TopHalf = () => {
                 initial={{opacity: 0, y: 5}}
                 animate={{opacity: 1, y: 0}}
                 transition={{duration: 0.4, delay: 0.6 + 0.2 * idx}}
-                className='text-lg md:text-xl font-semibold'
+                className='text-base sm:text-lg md:text-xl font-semibold'
               >
                 <span className='text-primary'><i className='fas fa-chevron-right' />&nbsp;</span>
                 {title}
@@ -141,7 +141,7 @@ const TopHalf = () => {
             initial={{opacity: 0, y: 10}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.4, delay: 2.0}} 
-            className='max-w-2xl text-center mx-auto my-6 md:text-lg'
+            className='max-w-2xl text-center mx-auto my-6 text-base md:text-lg'
           >
             <p className='font-semibold text-2xl'>About Me</p>
             <p className='my-2'>Hi, I'm Connor! I'm an engineer at Google and make social media content.</p>

@@ -101,10 +101,10 @@ const ApplicationForm = ({ selectedTier, onTierChange }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}
     >
-      <div className='bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12'>
+      <div className='bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-12'>
         {/* Form Header */}
         <div className='text-center mb-8'>
-          <h3 className='text-3xl font-bold text-gray-900 dark:text-white mb-3'>
+          <h3 className='text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3'>
             Apply for Mentorship
           </h3>
           <p className='text-gray-600 dark:text-gray-400'>

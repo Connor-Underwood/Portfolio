@@ -9,10 +9,11 @@ const ContactButton = ({contact, idx}) => {
             key={contact.Name}
         >
             <a href={contact.Link} target="_blank" rel="noreferrer">
-                <motion.div 
-                    className='w-14 h-14 text-primary rounded-full color-indigo-500 border-2 border-primary inline-flex flex-shrink-0 justify-center items-center hover:shadow-md hover:shadow-indigo-500/50'
+                <motion.div
+                    className='w-14 h-14 text-primary rounded-full color-indigo-500 border-2 border-primary inline-flex flex-shrink-0 justify-center items-center hover:shadow-md hover:shadow-indigo-500/50 active:scale-95 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all'
                     initial={{y: 0}}
                     whileHover={{y: -4}}
+                    whileTap={{scale: 0.95}}
                     transition={{duration: 0.2}}
                 >
                     <span><i className={contact.Icon} /></span>

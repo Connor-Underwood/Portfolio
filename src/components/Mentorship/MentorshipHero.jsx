@@ -13,7 +13,7 @@ const MentorshipHero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className='text-4xl md:text-5xl font-bold text-gray-900 dark:text-white'>
+        <h2 className='text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white'>
           {credentials.title}
         </h2>
         <p className='text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto'>
@@ -37,7 +37,7 @@ const MentorshipHero = () => {
               </div>
             </div>
             <div>
-              <p className='text-4xl md:text-5xl font-bold text-indigo-500 dark:text-indigo-400'>
+              <p className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-indigo-500 dark:text-indigo-400'>
                 {achievement.stat && (
                   <CountUp
                     end={parseInt(achievement.stat.replace(/\D/g, '')) || 0}
@@ -58,7 +58,7 @@ const MentorshipHero = () => {
 
       {/* Program Details */}
       <motion.div
-        className='bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 md:p-12 space-y-8'
+        className='bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 space-y-6 sm:space-y-8'
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
@@ -72,7 +72,7 @@ const MentorshipHero = () => {
           </p>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8'>
           {/* Topics Covered */}
           <div className='space-y-4'>
             <h4 className='text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2'>

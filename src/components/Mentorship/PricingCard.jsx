@@ -86,8 +86,8 @@ const PricingCard = ({ tier, index, onSelect }) => {
         {/* CTA Button */}
         <button
           className={`w-full ${tier.color} text-white rounded-full px-6 py-3 font-semibold
-            hover:shadow-xl ${tier.hoverShadow} active:shadow-none transition-all duration-200 ease-in
-            transform group-hover:scale-105`}
+            hover:shadow-xl ${tier.hoverShadow} active:shadow-none active:scale-95 transition-all duration-200 ease-in
+            transform group-hover:scale-105 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
         >
           Get Started
         </button>

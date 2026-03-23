@@ -13,15 +13,11 @@ const Navbar = () => {
 
     return (
         <motion.div variants={containerVariant} initial="hidden" animate="show" className={`text-white top-0 z-50 w-full`}>
-            <motion.div variants={textVariant} className='flex items-center justify-between p-6'>
-                <motion.img 
+            <motion.div variants={textVariant} className='flex items-center justify-between p-4 sm:p-6'>
+                <motion.img
                     src={Logo}
                     alt="logo"
-                    style={{
-                        width: "100px",
-                        height: "100px",
-                        padding: "0px"
-                    }}
+                    className='w-20 h-20 sm:w-24 sm:h-24 md:w-[100px] md:h-[100px]'
                     initial={{y: -2}}
                     animate={{y: 2}}
                     transition={{duration: 0.85, yoyo: Infinity}}
@@ -29,7 +25,7 @@ const Navbar = () => {
 
                 
 
-                <motion.div variants={containerVariant} className='flex items-center gap-4 w-fit'>
+                <motion.div variants={containerVariant} className='flex items-center gap-2 sm:gap-4 w-fit'>
                     {links.map((link) => (
                         <motion.div
                             key={link.name}
@@ -42,7 +38,7 @@ const Navbar = () => {
                                     onClick={
                                         () => document.getElementById(link.id).scrollIntoView({behavior: 'smooth'})
                                     }
-                                    className='flex items-center gap-1 text-inherit text-lg font-semibold cursor-pointer hover:text-primary transition duration-100 ease-in'
+                                    className='flex items-center gap-1 text-inherit text-base sm:text-lg font-semibold cursor-pointer hover:text-primary active:text-primary transition duration-100 ease-in'
                                 >
                                     <p>{link.name}</p>
                                     {link.icon}
