@@ -1,5 +1,5 @@
 import oCEANIC from '../../assets/oCEANIC.png'
-import Purdue from '../../assets/purdue.png'
+import Purdue from '../../assets/logos/purdue.png'
 export const research = [
     {
         image: oCEANIC,

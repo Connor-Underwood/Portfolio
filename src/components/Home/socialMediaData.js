@@ -1,63 +1,45 @@
 // Social media posts data
-import connorStormking from '../../assets/connor_stormking.png';
-import connorHawaii from '../../assets/connor_hawaii.png';
-import tiktokPost1 from '../../assets/tiktok-post-1.png';
-import tiktokPost2 from '../../assets/tiktok-post-2.png';
-import tiktokPost3 from '../../assets/tiktok-post-3.png';
-import instagramPost1 from '../../assets/instagram-post-1.png';
-import instagramPost2 from '../../assets/instagram-post-2.png';
-import instagramPost3 from '../../assets/instagram-post-3.png';
-import instagramPost4 from '../../assets/instagram-post-4.png';
+import post1 from '../../assets/post-1.png';
+import post2 from '../../assets/post-2.png';
+import post3 from '../../assets/post-3.png';
+import post4 from '../../assets/post-4.png';
+import post5 from '../../assets/post-5.png';
 
 export const socialMediaPosts = [
   {
     id: 1,
     platform: 'tiktok',
-    image: connorStormking,
+    image: post1,
     icon: 'fab fa-tiktok',
     platformColor: '#000000'
   },
   {
     id: 2,
-    platform: 'instagram',
-    image: connorHawaii,
-    icon: 'fab fa-instagram',
-    platformColor: '#E4405F'
+    platform: 'tiktok',
+    image: post2,
+    icon: 'fab fa-tiktok',
+    platformColor: '#000000'
   },
   {
     id: 3,
     platform: 'tiktok',
-    image: tiktokPost2,
+    image: post3,
     icon: 'fab fa-tiktok',
     platformColor: '#000000'
   },
   {
     id: 4,
-    platform: 'instagram',
-    image: instagramPost2,
-    icon: 'fab fa-instagram',
-    platformColor: '#E4405F'
-  },
-  {
-    id: 5,
     platform: 'tiktok',
-    image: tiktokPost3,
+    image: post4,
     icon: 'fab fa-tiktok',
     platformColor: '#000000'
   },
   {
-    id: 6,
-    platform: 'instagram',
-    image: instagramPost3,
-    icon: 'fab fa-instagram',
-    platformColor: '#E4405F'
-  },
-  {
-    id: 7,
-    platform: 'instagram',
-    image: instagramPost4,
-    icon: 'fab fa-instagram',
-    platformColor: '#E4405F'
+    id: 5,
+    platform: 'tiktok',
+    image: post5,
+    icon: 'fab fa-tiktok',
+    platformColor: '#000000'
   }
 ];
 

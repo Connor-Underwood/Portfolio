@@ -97,7 +97,7 @@ const BottomHalf = () => {
 
                     <div
                         ref={mentorshipRef}
-                        className='mt-20'
+                        className='mt-12'
                         id="mentorship"
                     >
                         {mentorshipInView ?

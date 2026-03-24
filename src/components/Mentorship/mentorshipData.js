@@ -1,107 +1,95 @@
-// Credentials data
+// Mentorship program data
+
 export const credentials = {
-  title: "Learn from me!",
-  subtitle: "Accelerate your tech career with personalized guidance",
+  title: "Learn from a Google Engineer",
+  subtitle: "Get personalized mentorship from someone who's been there",
   achievements: [
-    {
-      icon: "fa-brands fa-google",
-      stat: "",
-      suffix: "Google Search",
-      description: "Software Engineer on flagship product",
-      color: "text-white"
-    },
     {
       icon: "fas fa-briefcase",
       stat: "3",
-      description: "FAANG Internships (Google, Microsoft, Amazon)",
-      color: "text-white"
+      description: "FAANG Internships"
     },
     {
       icon: "fas fa-users",
       stat: "50k",
       suffix: "+",
-      description: "Social Media Followers",
-      color: "text-white"
+      description: "Social Media Followers"
+    },
+    {
+      icon: "fas fa-code",
+      stat: "Google",
+      description: "Search Team"
     }
   ]
 };
 
-// Program details
 export const programDetails = {
-  format: "1-on-1 Video Sessions",
-  duration: "Flexible scheduling to fit your needs",
+  format: "1-on-1 video calls",
   topics: [
-    "Interview Preparation & Mock Interviews",
-    "Resume & LinkedIn Optimization",
-    "Career Strategy & Growth Planning",
-    "Technical Skills Development",
-    "Networking & Personal Branding"
+    "Career guidance & interview prep",
+    "Resume review & LinkedIn optimization",
+    "Coding skills & technical growth",
+    "Navigating tech industry & FAANG companies",
+    "Personal branding & social media"
   ],
   highlights: [
-    "Personalized guidance from Google SWE on Google Search",
-    "Real FAANG interview questions & strategies",
-    "Career roadmap tailored to your goals",
-    "Direct messaging access between sessions"
+    "Flexible scheduling",
+    "Personalized advice",
+    "Real industry insights"
   ]
 };
 
-// Pricing tiers
 export const pricingTiers = [
   {
     id: "starter",
     name: "Starter Session",
-    price: "$25",
+    price: "$20",
     duration: "1 Hour",
-    description: "Buy me lunch! Perfect for getting started or addressing specific questions",
+    description: "Perfect for getting specific advice or a quick consultation",
     features: [
-      "1-hour video call",
-      "Resume/LinkedIn review",
-      "Career advice & strategy",
-      "Q&A session",
+      "1 hour 1-on-1 video call",
+      "Resume or LinkedIn review",
+      "Career advice & guidance",
       "Follow-up email summary",
-      "Resume template"
+      "My resume template"
     ],
-    popular: true,
+    popular: false,
     color: "bg-gradient-to-br from-indigo-400 to-indigo-600",
-    bg: "bg-gradient-to-br from-indigo-400/10 to-indigo-600/10",
-    hoverShadow: "group-hover:shadow-indigo-500/30"
+    hoverShadow: "hover:shadow-indigo-500/30"
   },
   {
     id: "professional",
     name: "Professional Package",
     price: "$125",
-    duration: "4 Sessions",
-    description: "Comprehensive mentorship for interview prep and career growth",
+    duration: "3 Sessions",
+    description: "Best for interview prep and comprehensive career development",
     features: [
-      "Four 1-hour sessions",
-      "Complete resume overhaul",
-      "Mock technical interviews",
-      "LinkedIn optimization",
-      "Messaging support between sessions",
-      "Personalized learning resources"
+      "3 hours of 1-on-1 mentorship",
+      "Interview preparation & mock interviews",
+      "Resume & LinkedIn optimization",
+      "Ongoing support via email",
+      "Priority scheduling"
     ],
-    popular: false,
+    popular: true,
     color: "bg-gradient-to-br from-indigo-500 to-purple-600",
-    bg: "bg-gradient-to-br from-indigo-500/10 to-purple-600/10",
-    hoverShadow: "group-hover:shadow-purple-500/30"
+    hoverShadow: "hover:shadow-purple-500/30"
   },
   {
     id: "elite",
     name: "Elite Mentorship",
     price: "$250",
-    duration: "12 Sessions",
-    description: "Complete career transformation with ongoing support",
+    duration: "6 Sessions",
+    description: "Complete transformation package for serious career growth",
     features: [
-      "Twelve 1-hour sessions over 3 months",
-      "End-to-end interview preparation",
-      "Portfolio/project review & guidance",
-      "Priority messaging access",
-      "Referral assistance for Google",
-      "Career roadmap development"
+      "6 hours of personalized mentorship",
+      "Comprehensive interview preparation",
+      "Multiple resume & portfolio reviews",
+      "Coding practice & technical guidance",
+      "Direct access via messaging",
+      "Personal branding strategy"
     ],
     popular: false,
     color: "bg-gradient-to-br from-purple-500 to-pink-600",
-    bg: "bg-gradient-to-br from-purple-500/10 to-pink-600/10",
-    hoverShadow: "group-hover:shadow-pink-500/30"
+    hoverShadow: "hover:shadow-pink-500/30"
   }
 ];

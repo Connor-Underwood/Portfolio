@@ -1,9 +1,9 @@
 import oCEANIC from '../../assets/oCEANIC.png'
-import Wabash from '../../assets/wabash.png'
-import AmazonWholeFoods from '../../assets/amazon.png'
-import FinishLine from '../../assets/jd.png'
-import Google from '../../assets/google.webp'
-import Microsoft from '../../assets/microsoft.png'
+import Wabash from '../../assets/logos/wabash.jpg'
+import AmazonWholeFoods from '../../assets/logos/amazon.png'
+import FinishLine from '../../assets/logos/jd.png'
+import Google from '../../assets/logos/google.png'
+import Microsoft from '../../assets/logos/microsoft.png'
 
 export const internships = [
     {

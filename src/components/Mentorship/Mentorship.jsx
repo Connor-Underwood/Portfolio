@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import MentorshipHero from './MentorshipHero';
 import PricingCard from './PricingCard';
 import ApplicationForm from './ApplicationForm';
+import CompanyCarousel from './CompanyCarousel';
 import { pricingTiers } from './mentorshipData';
 
 const Mentorship = () => {
@@ -13,9 +14,18 @@ const Mentorship = () => {
   };
 
   return (
-    <div className='space-y-20'>
+    <div className='space-y-6'>
       {/* Hero Section */}
       <MentorshipHero />
+
+      {/* Company Carousel */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
+        <CompanyCarousel />
+      </motion.div>
 
       {/* Pricing Section */}
       <div className='space-y-8'>

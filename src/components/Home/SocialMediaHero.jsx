@@ -6,13 +6,13 @@ const SocialMediaHero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Auto-rotate posts every 4 seconds
+  // Auto-rotate posts every 3 seconds
   useEffect(() => {
     if (isPaused) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % socialMediaPosts.length);
-    }, 4000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [isPaused]);
