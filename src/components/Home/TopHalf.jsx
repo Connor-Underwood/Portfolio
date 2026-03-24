@@ -69,7 +69,7 @@ const TopHalf = () => {
         
       <Navbar />      
       
-      <div className='z-10 flex-grow flex items-center'>
+      <div className='z-10 flex-grow flex items-start lg:items-center lg:overflow-hidden overflow-y-auto'>
         <div className='max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 md:px-8 py-2 md:py-4 z-10'>
           <div className='text-left text-white flex flex-col justify-center'>
           <motion.div
@@ -149,9 +149,14 @@ const TopHalf = () => {
             <p className='font-semibold text-2xl'>About Me</p>
             <p className='my-2'>Hi, I'm Connor! I'm an engineer at Google and make social media content.</p>
           </motion.div>
+
+          {/* Social Media Hero - Mobile */}
+          <div className='lg:hidden mt-6'>
+            <SocialMediaHero />
+          </div>
           </div>
 
-          {/* Right side - Social Media Hero */}
+          {/* Right side - Social Media Hero - Desktop */}
           <div className='hidden lg:flex items-center justify-center'>
             <SocialMediaHero />
           </div>
