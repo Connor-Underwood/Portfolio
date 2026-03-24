@@ -11,35 +11,35 @@ export const socialMediaPosts = [
     platform: 'tiktok',
     image: post1,
     icon: 'fab fa-tiktok',
-    platformColor: '#000000'
+    platformColor: '#ffffff'
   },
   {
     id: 2,
-    platform: 'tiktok',
+    platform: 'instagram',
     image: post2,
-    icon: 'fab fa-tiktok',
-    platformColor: '#000000'
+    icon: 'fab fa-instagram',
+    platformColor: '#ec4899'
   },
   {
     id: 3,
-    platform: 'tiktok',
+    platform: 'instagram',
     image: post3,
-    icon: 'fab fa-tiktok',
-    platformColor: '#000000'
+    icon: 'fab fa-instagram',
+    platformColor: '#ec4899'
   },
   {
     id: 4,
-    platform: 'tiktok',
+    platform: 'instagram',
     image: post4,
-    icon: 'fab fa-tiktok',
-    platformColor: '#000000'
+    icon: 'fab fa-instagram',
+    platformColor: '#ec4899'
   },
   {
     id: 5,
-    platform: 'tiktok',
+    platform: 'instagram',
     image: post5,
-    icon: 'fab fa-tiktok',
-    platformColor: '#000000'
+    icon: 'fab fa-instagram',
+    platformColor: '#ec4899'
   }
 ];
 

@@ -77,7 +77,7 @@ const SocialMediaHero = () => {
 
                 {/* Platform Badge */}
                 <div className='absolute top-4 right-4 bg-gray-900/80 backdrop-blur-sm rounded-full px-3 py-2 flex items-center gap-2'>
-                  <i className={`${currentPost.icon} text-white text-sm`} />
+                  <i className={`${currentPost.icon} text-sm`} style={{ color: currentPost.platformColor }} />
                   <span className='text-white text-xs font-semibold capitalize'>
                     {currentPost.platform}
                   </span>
