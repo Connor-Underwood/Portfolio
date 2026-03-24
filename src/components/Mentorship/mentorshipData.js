@@ -4,31 +4,24 @@ export const credentials = {
   subtitle: "Accelerate your tech career with personalized guidance",
   achievements: [
     {
-      icon: "fas fa-dollar-sign",
-      stat: "225k",
-      suffix: "/yr",
-      description: "at Google at age 21",
-      color: "text-indigo-500"
+      icon: "fa-brands fa-google",
+      stat: "",
+      suffix: "Google Search",
+      description: "Software Engineer on flagship product",
+      color: "text-white"
     },
     {
       icon: "fas fa-briefcase",
       stat: "3",
       description: "FAANG Internships (Google, Microsoft, Amazon)",
-      color: "text-indigo-500"
+      color: "text-white"
     },
     {
       icon: "fas fa-users",
       stat: "50k",
       suffix: "+",
       description: "Social Media Followers",
-      color: "text-indigo-500"
-    },
-    {
-      icon: "fas fa-search",
-      stat: "",
-      suffix: "Google Search",
-      description: "Software Engineer on flagship product",
-      color: "text-indigo-500"
+      color: "text-white"
     }
   ]
 };

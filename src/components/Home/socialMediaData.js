@@ -1,4 +1,6 @@
 // Social media posts data
+import connorStormking from '../../assets/connor_stormking.png';
+import connorHawaii from '../../assets/connor_hawaii.png';
 import tiktokPost1 from '../../assets/tiktok-post-1.png';
 import tiktokPost2 from '../../assets/tiktok-post-2.png';
 import tiktokPost3 from '../../assets/tiktok-post-3.png';
@@ -11,14 +13,14 @@ export const socialMediaPosts = [
   {
     id: 1,
     platform: 'tiktok',
-    image: tiktokPost1,
+    image: connorStormking,
     icon: 'fab fa-tiktok',
     platformColor: '#000000'
   },
   {
     id: 2,
     platform: 'instagram',
-    image: instagramPost1,
+    image: connorHawaii,
     icon: 'fab fa-instagram',
     platformColor: '#E4405F'
   },
