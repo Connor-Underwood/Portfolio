@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 
 const ContactButton = ({contact, idx}) => {
+    const isMailto = contact.Link.startsWith('mailto:');
+
     return (
         <motion.div
             initial={{opacity: 0, y: 5}}
@@ -8,7 +10,7 @@ const ContactButton = ({contact, idx}) => {
             transition={{duration: 0.2, delay: 1.2 + 0.2 * idx}}
             key={contact.Name}
         >
-            <a href={contact.Link} target="_blank" rel="noreferrer">
+            <a href={contact.Link} target={isMailto ? undefined : "_blank"} rel={isMailto ? undefined : "noreferrer"}>
                 <motion.div
                     className='w-14 h-14 text-primary rounded-full color-indigo-500 border-2 border-primary inline-flex flex-shrink-0 justify-center items-center hover:shadow-md hover:shadow-indigo-500/50 active:scale-95 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all'
                     initial={{y: 0}}

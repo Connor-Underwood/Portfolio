@@ -68,7 +68,7 @@ export const pricingTiers = [
       "Follow-up email summary",
       "Resume template"
     ],
-    popular: false,
+    popular: true,
     color: "bg-gradient-to-br from-indigo-400 to-indigo-600",
     bg: "bg-gradient-to-br from-indigo-400/10 to-indigo-600/10",
     hoverShadow: "group-hover:shadow-indigo-500/30"
@@ -87,7 +87,7 @@ export const pricingTiers = [
       "Messaging support between sessions",
       "Personalized learning resources"
     ],
-    popular: true,
+    popular: false,
     color: "bg-gradient-to-br from-indigo-500 to-purple-600",
     bg: "bg-gradient-to-br from-indigo-500/10 to-purple-600/10",
     hoverShadow: "group-hover:shadow-purple-500/30"

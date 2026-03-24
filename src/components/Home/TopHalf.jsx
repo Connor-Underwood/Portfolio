@@ -2,12 +2,13 @@ import React, { useState, useEffect, useRef } from 'react'
 
 import {motion} from "framer-motion"
 
-import profile from "../../assets/IMG_3695.png"
+import profile from "../../assets/connor_maple_pass.png"
 import Navbar from '../Navbar'
 
 import Typewriter from 'typewriter-effect';
 import BIRDS from 'vanta/dist/vanta.birds.min'
 import ContactButton from './ContactButton';
+import SocialMediaHero from './SocialMediaHero';
 const TopHalf = () => {
 
   const [vantaEffect, setVantaEffect] = useState(0)
@@ -42,7 +43,7 @@ const TopHalf = () => {
   ]
 
   const contactLinks = [
-    {Name: "Mail", Icon: 'far fa-envelope fa-lg', Link: ""},
+    {Name: "Mail", Icon: 'far fa-envelope fa-lg', Link: "mailto:connorunderwood.2004@gmail.com"},
     {Name: "LinkedIn", Icon: 'fab fa-linkedin fa-lg', Link: "https://www.linkedin.com/in/connorunderwood2004"},
     {Name: "GitHub", Icon: "fab fa-github fa-lg", Link: "https://github.com/Connor-Underwood"},
   ]
@@ -64,14 +65,15 @@ const TopHalf = () => {
 
 
   return (
-    <div ref={myRef} className='bg-gray-900 text-white h-screen flex flex-col'>
+    <div ref={myRef} className='bg-gray-900 text-white h-screen flex flex-col overflow-hidden'>
         
       <Navbar />      
       
-      <div className='z-10 flex-grow grid place-items-center'>
-        <div className='max-w-7xl mx-auto justify-center text-center text-white p-4 z-10'>
+      <div className='z-10 flex-grow flex items-center'>
+        <div className='max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 md:px-8 py-2 md:py-4 z-10'>
+          <div className='text-left text-white flex flex-col justify-center'>
           <motion.div
-            className='w-48 sm:w-56 md:w-64 z-0 aspect-square relative grid place-items-center rounded-full mx-auto shadow-lg shadow-indigo-500/50'
+            className='w-56 sm:w-64 md:w-72 z-0 aspect-square relative grid place-items-center rounded-full shadow-lg shadow-indigo-500/50'
             initial={{opacity: 0, y: 10}} 
             animate={{opacity: 1, y: 0}} 
             transition={{duration: 0.4, delay: 0.4}}
@@ -91,10 +93,11 @@ const TopHalf = () => {
                 fill="transparent"
               />
             </motion.svg>
-            <div className='absolute bg-gray-900 rounded-full w-full aspect-square z-0'>
+            <div className='absolute bg-gray-900 rounded-full w-full aspect-square z-0 overflow-hidden'>
               <motion.img 
                 src={profile} 
-                className='rounded-full w-full h-full object-cover' // Add 'object-cover' here
+                className='rounded-full w-full h-full object-cover scale-150' 
+                style={{ objectPosition: 'center 95%' }} 
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.4 }}
@@ -104,7 +107,7 @@ const TopHalf = () => {
           </motion.div>
           
           
-          <div className='text-2xl sm:text-3xl md:text-4xl font-bold text-center my-4 flex justify-center font-mono'>
+          <div className='text-2xl sm:text-3xl md:text-4xl font-bold my-3 flex font-mono'>
             <span className={`mr-1 text-primary`}>$</span>
             <Typewriter
               onInit={(typewriter) => {
@@ -116,7 +119,7 @@ const TopHalf = () => {
             />
           </div>
 
-          <div className='flex gap-4 my-4 justify-center'>
+          <div className='flex gap-4 my-2 flex-wrap'>
             {titles.map((title, idx) => (
               <motion.p
                 key={title}
@@ -131,7 +134,7 @@ const TopHalf = () => {
             ))}
           </div>
 
-          <div className='flex mx-auto text-center justify-center items-center my-4 gap-4'>
+          <div className='flex items-center my-3 gap-4'>
               {contactLinks.map((contact, idx) => (
                 <ContactButton contact={contact} idx={idx} />
               ))}
@@ -140,12 +143,18 @@ const TopHalf = () => {
           <motion.div
             initial={{opacity: 0, y: 10}}
             animate={{opacity: 1, y: 0}}
-            transition={{duration: 0.4, delay: 2.0}} 
-            className='max-w-2xl text-center mx-auto my-6 text-base md:text-lg'
+            transition={{duration: 0.4, delay: 2.0}}
+            className='max-w-lg mt-4 text-base md:text-lg'
           >
             <p className='font-semibold text-2xl'>About Me</p>
             <p className='my-2'>Hi, I'm Connor! I'm an engineer at Google and make social media content.</p>
           </motion.div>
+          </div>
+
+          {/* Right side - Social Media Hero */}
+          <div className='hidden lg:flex items-center justify-center'>
+            <SocialMediaHero />
+          </div>
         </div>
       </div>
     </div>
