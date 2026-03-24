@@ -35,6 +35,8 @@ const CompanyCarousel = () => {
         }
         @media (max-width: 768px) {
           .marquee-track {
+            gap: 1.5rem;
+            padding: 0 1rem;
             animation-duration: 10s;
           }
         }

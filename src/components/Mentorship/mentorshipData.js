@@ -16,9 +16,10 @@ export const credentials = {
       description: "Social Media Followers"
     },
     {
-      icon: "fas fa-code",
+      icon: "fab fa-google",
       stat: "Google",
-      description: "Search Team"
+      description: "Software Engineer @ Google Search",
+      isText: true
     }
   ]
 };
@@ -26,16 +27,14 @@ export const credentials = {
 export const programDetails = {
   format: "1-on-1 video calls",
   topics: [
-    "Career guidance & interview prep",
-    "Resume review & LinkedIn optimization",
     "Coding skills & technical growth",
     "Navigating tech industry & FAANG companies",
     "Personal branding & social media"
   ],
   highlights: [
-    "Flexible scheduling",
-    "Personalized advice",
-    "Real industry insights"
+    "Resume overhaul & LinkedIn optimization",
+    "Mock technicals with real FAANG engineer",
+    "System design interviews"
   ]
 };
 
@@ -45,15 +44,15 @@ export const pricingTiers = [
     name: "Starter Session",
     price: "$20",
     duration: "1 Hour",
-    description: "Perfect for getting specific advice or a quick consultation",
+    description: "Buy me lunch! Perfect for getting specific advice or a quick consultation",
     features: [
       "1 hour 1-on-1 video call",
-      "Resume or LinkedIn review",
+      "Resume & LinkedIn review",
       "Career advice & guidance",
       "Follow-up email summary",
-      "My resume template"
+      "My FAANG resume template"
     ],
-    popular: false,
+    popular: true,
     color: "bg-gradient-to-br from-indigo-400 to-indigo-600",
     hoverShadow: "hover:shadow-indigo-500/30"
   },
@@ -64,13 +63,13 @@ export const pricingTiers = [
     duration: "3 Sessions",
     description: "Best for interview prep and comprehensive career development",
     features: [
-      "3 hours of 1-on-1 mentorship",
+      "4 weekly 1-on-1 video calls",
       "Interview preparation & mock interviews",
       "Resume & LinkedIn optimization",
       "Ongoing support via email",
       "Priority scheduling"
     ],
-    popular: true,
+    popular: false,
     color: "bg-gradient-to-br from-indigo-500 to-purple-600",
     hoverShadow: "hover:shadow-purple-500/30"
   },
@@ -81,7 +80,7 @@ export const pricingTiers = [
     duration: "6 Sessions",
     description: "Complete transformation package for serious career growth",
     features: [
-      "6 hours of personalized mentorship",
+      "12 weekly 1-on-1 videos calls (3 months)",
       "Comprehensive interview preparation",
       "Multiple resume & portfolio reviews",
       "Coding practice & technical guidance",

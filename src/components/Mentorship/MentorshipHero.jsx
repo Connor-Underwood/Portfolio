@@ -45,15 +45,19 @@ const MentorshipHero = () => {
               </div>
               <div className='text-center'>
                 <p className='text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent'>
-                  {achievement.stat && (
-                    <CountUp
-                      end={parseInt(achievement.stat.replace(/\D/g, '')) || 0}
-                      duration={2}
-                      delay={0.2 + 0.1 * idx}
-                      suffix={achievement.stat.includes('k') ? 'k' : ''}
-                    />
+                  {achievement.isText ? (
+                    achievement.stat
+                  ) : (
+                    <>
+                      <CountUp
+                        end={parseInt(achievement.stat.replace(/\D/g, '')) || 0}
+                        duration={2}
+                        delay={0.2 + 0.1 * idx}
+                        suffix={achievement.stat.includes('k') ? 'k' : ''}
+                      />
+                      {achievement.suffix}
+                    </>
                   )}
-                  {achievement.suffix}
                 </p>
                 <p className='text-xs text-gray-400 mt-1'>
                   {achievement.description}
