@@ -62,7 +62,7 @@ export const socialMediaPosts = [
 export const socialStats = {
   totalFollowers: '50k+',
   platforms: [
-    { name: 'TikTok', followers: '30k+', icon: 'fab fa-tiktok' },
-    { name: 'Instagram', followers: '20k+', icon: 'fab fa-instagram' }
+    { name: 'TikTok', followers: '24.2k', icon: 'fab fa-tiktok', color: '#ffffff' },
+    { name: 'Instagram', followers: '27.3k', icon: 'fab fa-instagram', color: '#ec4899' }
   ]
 };

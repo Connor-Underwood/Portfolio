@@ -10,7 +10,7 @@ export const internships = [
       image: Google,
       title: "Software Engineer Intern",
       href: "https://labs.google.com/search/",
-      linkPreview: "google-search.com",
+      linkPreview: "labs.google.com/search/",
       description:
         "AI Mode @ Google Search",
       tags: ["Java, Swift"]
@@ -37,9 +37,9 @@ export const internships = [
       image: AmazonWholeFoods,
       title: "Data Science Intern",
       href: "https://www.amazon.com/alm/storefront?almBrandId=VUZHIFdob2xlIEZvb2Rz",
-      linkPreview: "amazon-wholefoods.com",
+      linkPreview: "amazon.com",
       description:
-        "Ex-Data Science intern at Amazon Whole Foods under the world-wide grocery sector. ",
+        "Data Science intern at Amazon under the world-wide grocery sector. ",
       tags: ["AWS Redshift", "AWS S3", "SQL", "Python"],
     },
     {
@@ -55,9 +55,9 @@ export const internships = [
       image: FinishLine,
       title: "Data Science Intern",
       href: "https://www.finishline.com/store/about-jd?srsltid=AfmBOooIEaq8qLM2zlqS0ZuOpw6DYkYcvEKf6zgk_s1qcEq6-fwH8e8e",
-      linkPreview: "jd-finish-line.com",
+      linkPreview: "jdsports.com/",
       description:
-        "Ex-Data Science Intern at JD Finish Line under the inventory and product out-source team.",
+        "Data Science Intern at JD Finish Line under the supply chain management team.",
       tags: ["Python", "Tensorflow", "Google Vertex AI"],
     },
     

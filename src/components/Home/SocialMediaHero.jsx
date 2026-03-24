@@ -36,7 +36,7 @@ const SocialMediaHero = () => {
         <div className='flex gap-3 mt-1 justify-center'>
           {socialStats.platforms.map((platform, idx) => (
             <div key={idx} className='flex items-center gap-2 text-sm'>
-              <i className={`${platform.icon} text-indigo-400`} />
+              <i className={platform.icon} style={{ color: platform.color }} />
               <span className='text-gray-300'>{platform.followers}</span>
             </div>
           ))}
@@ -123,7 +123,7 @@ const SocialMediaHero = () => {
 
       {/* View More CTA */}
       <motion.a
-        href='https://www.tiktok.com/@connorunderwood' // Replace with your actual TikTok/Instagram
+        href='https://linktr.ee/underconnorwood' // Replace with your actual TikTok/Instagram
         target='_blank'
         rel='noreferrer'
         initial={{ opacity: 0 }}

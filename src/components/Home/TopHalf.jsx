@@ -73,9 +73,9 @@ const TopHalf = () => {
         <div className='max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 md:px-8 py-2 md:py-4 z-10'>
           <div className='text-left text-white flex flex-col justify-center'>
           <motion.div
-            className='w-56 sm:w-64 md:w-72 z-0 aspect-square relative grid place-items-center rounded-full shadow-lg shadow-indigo-500/50'
-            initial={{opacity: 0, y: 10}} 
-            animate={{opacity: 1, y: 0}} 
+            className='w-56 sm:w-64 md:w-72 mx-auto ml-4 z-0 aspect-square relative grid place-items-center rounded-full shadow-lg shadow-indigo-500/50'
+            initial={{opacity: 0, y: 10}}
+            animate={{opacity: 1, y: 0}}
             transition={{duration: 0.4, delay: 0.4}}
           >
             <motion.svg
