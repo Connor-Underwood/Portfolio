@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import Resume from "../Resume/Resume";
 import Projects from "../Projects/Projects";
 import Mentorship from "../Mentorship/Mentorship";
+import SocialMediaHero from "./SocialMediaHero";
 
 
 const BottomHalf = () => {
@@ -16,6 +17,11 @@ const BottomHalf = () => {
     });
 
     const [mentorshipRef, mentorshipInView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-80px 0px',
+    });
+
+    const [socialRef, socialInView] = useInView({
         triggerOnce: true,
         rootMargin: '-80px 0px',
     });
@@ -123,6 +129,37 @@ const BottomHalf = () => {
                             <div className='h-40' />
                         }
 
+                    </div>
+
+                    <div
+                        ref={socialRef}
+                        className='mt-12'
+                        id="content"
+                    >
+                        {socialInView ?
+                            <>
+                                <motion.div
+                                    className='my-4 text-right flex justify-right items-center ml-auto w-fit gap-4'
+                                    initial={{opacity: 0, x: 50}}
+                                    animate={{opacity: 1, x: 0}}
+                                    transition={{duration: 0.4, delay: 0.2}}
+                                >
+                                    <p className='font-bold text-xl sm:text-2xl md:text-3xl'>Content</p>
+                                    <div className='w-1 bg-indigo-500 h-8' />
+                                </motion.div>
+
+                                <motion.div
+                                    initial={{opacity: 0}}
+                                    animate={{opacity: 1}}
+                                    transition={{duration: 0.4, delay: 0.4}}
+                                    className='py-8'
+                                >
+                                    <SocialMediaHero />
+                                </motion.div>
+                            </>
+                            :
+                            <div className='h-96' />
+                        }
                     </div>
 
                     <div

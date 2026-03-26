@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 
 const ContactButton = ({contact, idx}) => {
-    const isMailto = contact.Link.startsWith('mailto:');
 
     return (
         <motion.div
@@ -10,15 +9,16 @@ const ContactButton = ({contact, idx}) => {
             transition={{duration: 0.2, delay: 1.2 + 0.2 * idx}}
             key={contact.Name}
         >
-            <a href={contact.Link} target={isMailto ? undefined : "_blank"} rel={isMailto ? undefined : "noreferrer"}>
+            <a href={contact.Link} target="_blank" rel="noreferrer">
                 <motion.div
-                    className='w-14 h-14 text-primary rounded-full color-indigo-500 border-2 border-primary inline-flex flex-shrink-0 justify-center items-center hover:shadow-md hover:shadow-indigo-500/50 active:scale-95 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all'
+                    className='w-14 h-14 rounded-full border-2 inline-flex flex-shrink-0 justify-center items-center active:scale-95 transition-all'
+                    style={{ borderColor: contact.color, boxShadow: `0 0 0 0 ${contact.color}` }}
                     initial={{y: 0}}
-                    whileHover={{y: -4}}
+                    whileHover={{y: -4, boxShadow: `0 4px 12px ${contact.color}40`}}
                     whileTap={{scale: 0.95}}
-                    transition={{duration: 0.2}}
+                    transition={{duration: 0.01}}
                 >
-                    <span><i className={contact.Icon} /></span>
+                    {contact.svg}
                 </motion.div>
             </a>
         </motion.div>

@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion'
 import Logo from "../assets/logo.png"
-import {ClipboardListIcon, CollectionIcon, AcademicCapIcon } from "@heroicons/react/outline"
+import {ClipboardListIcon, CollectionIcon, AcademicCapIcon, PlayIcon } from "@heroicons/react/outline"
 import {containerVariant, textVariant } from "../utils/variants"
 
 const Navbar = () => {
 
     const sections = [
         {name: 'Mentorship', id: "mentorship", icon: <AcademicCapIcon className='w-6 h-6 hidden md:block' />},
+        {name: "Content", id: 'content', icon: <PlayIcon className='w-6 h-6 hidden md:block' />},
         {name: 'Portfolio', id: "projects", icon: <CollectionIcon className='w-6 h-6 hidden md:block' />},
         {name: 'Resume', id: "experience", icon: <ClipboardListIcon className='w-6 h-6 hidden md:block' />}
     ]
@@ -35,9 +36,14 @@ const Navbar = () => {
                         >
                             <motion.div variants={textVariant} >
                                 <motion.a
-                                    onClick={
-                                        () => document.getElementById(section.id).scrollIntoView({behavior: 'smooth'})
-                                    }
+                                    onClick={() => {
+                                        const el = document.getElementById(section.id);
+                                        el.scrollIntoView({behavior: 'smooth'});
+                                        // Re-scroll as lazy sections render and shift layout
+                                        setTimeout(() => el.scrollIntoView({behavior: 'smooth'}), 500);
+                                        setTimeout(() => el.scrollIntoView({behavior: 'smooth'}), 1000);
+                                        setTimeout(() => el.scrollIntoView({behavior: 'smooth'}), 1500);
+                                    }}
                                     className='flex items-center gap-1 text-inherit text-base sm:text-lg font-semibold cursor-pointer hover:text-primary active:text-primary transition duration-100 ease-in'
                                 >
                                     <p>{section.name}</p>

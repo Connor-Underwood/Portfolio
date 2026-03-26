@@ -5,3 +5,7 @@
 ::selection {
  background: var(--theme-primary)
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
