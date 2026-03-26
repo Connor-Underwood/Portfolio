@@ -5,10 +5,10 @@ import {containerVariant, textVariant } from "../utils/variants"
 
 const Navbar = () => {
 
-    const links = [
-        {name: 'Portfolio', id: "projects", icon: <CollectionIcon className='w-6 h-6 hidden md:block' />},
+    const sections = [
         {name: 'Mentorship', id: "mentorship", icon: <AcademicCapIcon className='w-6 h-6 hidden md:block' />},
-        {name: 'Resume', id: "experience", icon: <ClipboardListIcon className='w-6 h-6 hidden md:block' />},
+        {name: 'Portfolio', id: "projects", icon: <CollectionIcon className='w-6 h-6 hidden md:block' />},
+        {name: 'Resume', id: "experience", icon: <ClipboardListIcon className='w-6 h-6 hidden md:block' />}
     ]
 
     return (
@@ -26,9 +26,9 @@ const Navbar = () => {
                 
 
                 <motion.div variants={containerVariant} className='flex items-center gap-2 sm:gap-4 w-fit'>
-                    {links.map((link) => (
+                    {sections.map((section) => (
                         <motion.div
-                            key={link.name}
+                            key={section.name}
                             initial={{y: 0}}
                             whileHover={{y: 2}}
                             className='w-fit'
@@ -36,12 +36,12 @@ const Navbar = () => {
                             <motion.div variants={textVariant} >
                                 <motion.a
                                     onClick={
-                                        () => document.getElementById(link.id).scrollIntoView({behavior: 'smooth'})
+                                        () => document.getElementById(section.id).scrollIntoView({behavior: 'smooth'})
                                     }
                                     className='flex items-center gap-1 text-inherit text-base sm:text-lg font-semibold cursor-pointer hover:text-primary active:text-primary transition duration-100 ease-in'
                                 >
-                                    <p>{link.name}</p>
-                                    {link.icon}
+                                    <p>{section.name}</p>
+                                    {section.icon}
                                 </motion.a>
                             </motion.div> 
                         </motion.div>

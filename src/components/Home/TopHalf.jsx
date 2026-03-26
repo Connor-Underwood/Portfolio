@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 
 import {motion} from "framer-motion"
 
@@ -6,35 +6,9 @@ import profile from "../../assets/connor_maple_pass.png"
 import Navbar from '../Navbar'
 
 import Typewriter from 'typewriter-effect';
-import BIRDS from 'vanta/dist/vanta.birds.min'
 import ContactButton from './ContactButton';
 import SocialMediaHero from './SocialMediaHero';
 const TopHalf = () => {
-
-  const [vantaEffect, setVantaEffect] = useState(0)
-  const myRef = useRef(null)
-
-  useEffect(() => {
-    if (!vantaEffect) {
-      setVantaEffect(
-        BIRDS({
-          el: myRef.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          scale: 1.00,
-          scaleMobile: 0.75,
-          color: "#40E0D0", // Adjust to your desired color
-          backgroundColor: "#111127", // Adjust to your desired background color
-          quantity: 3,
-        })
-      );
-    }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy(); // Cleanup on component unmount
-    };
-  }, [vantaEffect]);
 
   const titles = [
     'Student',
@@ -65,8 +39,32 @@ const TopHalf = () => {
 
 
   return (
-    <div ref={myRef} className='bg-gray-900 text-white h-screen flex flex-col overflow-hidden'>
-        
+    <div className='relative bg-black text-white h-screen flex flex-col overflow-hidden'>
+
+      {/* Grid background */}
+      <div
+        className='absolute inset-0 pointer-events-none'
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
+
+      {/* Radial fade so the grid fades out toward edges */}
+      <div
+        className='absolute inset-0 pointer-events-none'
+        style={{
+          background: 'radial-gradient(ellipse at 50% 50%, transparent 40%, black 90%)',
+        }}
+      />
+
+      {/* Subtle indigo glow at center */}
+      <div
+        className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] rounded-full opacity-20 blur-[120px] pointer-events-none'
+        style={{ background: 'radial-gradient(circle, #6366f1, transparent 70%)' }}
+      />
+
       <Navbar />      
       
       <div className='z-10 flex-grow flex items-start lg:items-center lg:overflow-hidden overflow-y-auto'>
@@ -93,7 +91,7 @@ const TopHalf = () => {
                 fill="transparent"
               />
             </motion.svg>
-            <div className='absolute bg-gray-900 rounded-full w-full aspect-square z-0 overflow-hidden'>
+            <div className='absolute bg-black rounded-full w-full aspect-square z-0 overflow-hidden'>
               <motion.img 
                 src={profile} 
                 className='rounded-full w-full h-full object-cover scale-150' 
