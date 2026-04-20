@@ -6,7 +6,7 @@ import {containerVariant, textVariant } from "../utils/variants"
 const Navbar = () => {
 
     const sections = [
-        {name: 'Mentorship', id: "mentorship", icon: <AcademicCapIcon className='w-6 h-6 hidden md:block' />},
+        {name: 'Tutoring', id: "mentorship", icon: <AcademicCapIcon className='w-6 h-6 hidden md:block' />},
         {name: "Content", id: 'content', icon: <PlayIcon className='w-6 h-6 hidden md:block' />},
         {name: 'Portfolio', id: "projects", icon: <CollectionIcon className='w-6 h-6 hidden md:block' />},
         {name: 'Resume', id: "experience", icon: <ClipboardListIcon className='w-6 h-6 hidden md:block' />}

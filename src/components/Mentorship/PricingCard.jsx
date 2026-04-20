@@ -33,7 +33,7 @@ const PricingCard = ({ tier, index, onSelect }) => {
         {/* Popular Badge */}
         {tier.popular && (
           <div className='absolute -top-4 left-1/2 -translate-x-1/2'>
-            <div className='bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg'>
+            <div className='bg-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg'>
               Most Popular
             </div>
           </div>

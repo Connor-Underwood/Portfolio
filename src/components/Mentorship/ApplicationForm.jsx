@@ -105,7 +105,7 @@ const ApplicationForm = ({ selectedTier, onTierChange }) => {
         {/* Form Header */}
         <div className='text-center mb-8'>
           <h3 className='text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3'>
-            Apply for Mentorship
+            Apply for Tutoring
           </h3>
           <p className='text-gray-600 dark:text-gray-400'>
             Fill out the form below and I'll get back to you within 24-48 hours
@@ -280,7 +280,7 @@ const ApplicationForm = ({ selectedTier, onTierChange }) => {
                 <option value=''>Select a program</option>
                 <option value='starter'>Starter Session ($25)</option>
                 <option value='professional'>Professional Package ($125)</option>
-                <option value='elite'>Elite Mentorship ($250)</option>
+                <option value='elite'>Elite Tutoring ($250)</option>
               </select>
               {errors.programInterest && (
                 <p className='text-sm text-red-500 dark:text-red-400 mt-1 flex items-center gap-1'>
@@ -307,7 +307,7 @@ const ApplicationForm = ({ selectedTier, onTierChange }) => {
                   ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
                   : 'border-gray-300 dark:border-gray-600 focus:border-indigo-500 focus:ring-indigo-500'
               } dark:bg-gray-700 dark:text-white shadow-sm focus:ring focus:ring-opacity-50 transition resize-none`}
-              placeholder='What are you hoping to achieve through mentorship? What specific areas would you like help with?'
+              placeholder='What are you hoping to achieve through tutoring? What specific areas would you like help with?'
             />
             <div className='flex justify-between items-center mt-1'>
               {errors.message ? (
@@ -330,8 +330,8 @@ const ApplicationForm = ({ selectedTier, onTierChange }) => {
           <button
             type='submit'
             disabled={submitStatus === 'submitting'}
-            className='w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-full px-8 py-4 font-semibold text-lg
-              hover:shadow-xl hover:shadow-purple-500/30 active:shadow-none transition-all duration-200 ease-in
+            className='w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded-full px-8 py-4 font-semibold text-lg
+              hover:shadow-xl hover:shadow-indigo-500/20 active:shadow-none transition-all duration-200 ease-in
               disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98]'
           >
             {submitStatus === 'submitting' ? (
@@ -349,7 +349,7 @@ const ApplicationForm = ({ selectedTier, onTierChange }) => {
 
           {/* Privacy Note */}
           <p className='text-xs text-center text-gray-500 dark:text-gray-400'>
-            Your information will only be used to contact you about mentorship opportunities
+            Your information will only be used to contact you about tutoring opportunities
           </p>
         </form>
       </div>

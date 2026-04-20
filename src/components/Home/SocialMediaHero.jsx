@@ -1,21 +1,27 @@
 import React, { useRef, useState, useCallback } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { socialMediaPosts, socialStats } from './socialMediaData';
 
 const PhoneMockup = ({ post }) => {
   const videoRef = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
+  const hoverTimer = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handleMouseEnter = useCallback(() => {
-    setIsHovered(true);
-    if (post.video && videoRef.current) {
-      videoRef.current.currentTime = 0;
-      videoRef.current.play();
+    if (post.video) {
+      hoverTimer.current = setTimeout(() => {
+        setIsPlaying(true);
+        if (videoRef.current) {
+          videoRef.current.currentTime = 0;
+          videoRef.current.play();
+        }
+      }, 400);
     }
   }, [post.video]);
 
   const handleMouseLeave = useCallback(() => {
-    setIsHovered(false);
+    clearTimeout(hoverTimer.current);
+    setIsPlaying(false);
     if (post.video && videoRef.current) {
       videoRef.current.pause();
     }
@@ -23,49 +29,24 @@ const PhoneMockup = ({ post }) => {
 
   return (
     <div
-      className='flex-shrink-0 group cursor-pointer'
+      className='flex-shrink-0 relative'
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
+      {/* Phone Frame (always visible) */}
       <div
-        className='relative w-[180px] h-[360px] sm:w-[200px] sm:h-[400px] bg-gray-950 rounded-[2rem] p-[6px] shadow-xl border-[2px] border-gray-800 transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-indigo-500/20'
+        className='relative w-[180px] h-[360px] sm:w-[200px] sm:h-[400px] bg-gray-950 rounded-[2rem] p-[6px] shadow-xl border-[2px] border-gray-800 cursor-pointer transition-shadow duration-300 hover:shadow-2xl hover:shadow-indigo-500/20'
       >
         {/* Dynamic Island */}
         <div className='absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-full z-20' />
 
         {/* Screen */}
-        <div className='relative w-full h-full bg-black rounded-[1.6rem] overflow-hidden'>
-          {/* Thumbnail */}
+        <div className='relative w-full h-full bg-black rounded-[1.4rem] overflow-hidden'>
           <img
             src={post.image}
             alt={`${post.platform} post`}
-            className={`w-full h-full object-cover transition-opacity duration-300 ${
-              isHovered && post.video ? 'opacity-0' : 'opacity-100'
-            }`}
+            className='w-full h-full object-cover'
           />
-
-          {/* Video (plays on hover) */}
-          {post.video && (
-            <video
-              ref={videoRef}
-              src={post.video}
-              muted
-              loop
-              playsInline
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
-                isHovered ? 'opacity-100' : 'opacity-0'
-              }`}
-            />
-          )}
-
-          {/* Play icon overlay when no video, shown on hover */}
-          {!post.video && isHovered && (
-            <div className='absolute inset-0 bg-black/30 flex items-center justify-center'>
-              <div className='w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center'>
-                <i className='fas fa-play text-white text-lg ml-1' />
-              </div>
-            </div>
-          )}
 
           {/* Platform Badge */}
           <div className='absolute top-6 right-3 bg-black/60 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1.5 z-10'>
@@ -76,6 +57,44 @@ const PhoneMockup = ({ post }) => {
           </div>
         </div>
       </div>
+
+      {/* Netflix-style pop-out video */}
+      <AnimatePresence>
+        {isPlaying && post.video && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.85 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+            className='absolute z-30 rounded-2xl overflow-hidden shadow-2xl shadow-black/60'
+            style={{
+              bottom: '100%',
+              left: '50%',
+              transform: 'translate(-50%, 0)',
+              marginBottom: '8px',
+              width: '260px',
+              height: '462px',
+            }}
+          >
+            <video
+              ref={videoRef}
+              src={post.video}
+              muted
+              loop
+              playsInline
+              className='w-full h-full object-cover'
+            />
+
+            {/* Platform Badge on pop-out */}
+            <div className='absolute top-3 right-3 bg-black/60 backdrop-blur-sm rounded-full px-2.5 py-1.5 flex items-center gap-1.5'>
+              <i className={`${post.icon} text-xs`} style={{ color: post.platformColor }} />
+              <span className='text-white text-xs font-semibold capitalize'>
+                {post.platform}
+              </span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
@@ -125,7 +144,7 @@ const SocialMediaHero = () => {
         {/* Scrollable Row */}
         <div
           ref={scrollRef}
-          className='flex gap-4 sm:gap-6 overflow-x-auto px-8 py-4 scrollbar-hide'
+          className='flex gap-4 sm:gap-6 overflow-x-auto px-8 py-12 scrollbar-hide'
           style={{
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',

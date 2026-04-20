@@ -178,7 +178,7 @@ const TopHalf = () => {
               href='#mentorship'
               className='group block w-full rounded-2xl border border-indigo-500/30 bg-indigo-500/10 backdrop-blur-sm p-6 text-center hover:bg-indigo-500/20 transition-all'
             >
-              <p className='text-lg font-bold text-white mb-1'>1-on-1 Mentorship</p>
+              <p className='text-lg font-bold text-white mb-1'>1-on-1 Tutoring</p>
               <p className='text-sm text-gray-400 mb-3'>Get personalized coaching to land your dream tech role</p>
               <span className='inline-flex items-center gap-2 text-indigo-400 font-semibold text-sm group-hover:gap-3 transition-all'>
                 View Programs <i className='fas fa-arrow-down text-xs' />
@@ -199,7 +199,7 @@ const TopHalf = () => {
               <div className='w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-500/20 flex items-center justify-center'>
                 <i className='fas fa-rocket text-2xl text-indigo-400' />
               </div>
-              <p className='text-2xl font-bold text-white mb-2'>1-on-1 Mentorship</p>
+              <p className='text-2xl font-bold text-white mb-2'>1-on-1 Tutoring</p>
               <p className='text-gray-400 mb-6'>Get personalized coaching to break into tech and land your dream role</p>
               <span className='inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white font-semibold px-6 py-3 rounded-xl transition-colors'>
                 View Programs <i className='fas fa-arrow-down text-sm' />

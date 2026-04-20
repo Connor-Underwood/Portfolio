@@ -39,7 +39,7 @@ const Mentorship = () => {
             Choose Your Package
           </h3>
           <p className='text-lg text-gray-600 dark:text-gray-400'>
-            Select the mentorship program that fits your needs
+            Select the tutoring program that fits your needs
           </p>
         </motion.div>
 

@@ -2,7 +2,6 @@ const Footer = () => {
 
     const links = [
         {Name: "Home", Link: "/"},
-        {Name: "Email", Icon: 'far fa-envelope fa-lg', Link: "mailto:connorunderwood.2004@gmail.com"},
         {Name: "LinkedIn", Icon: 'fab fa-linkedin fa-lg', Link: "https://www.linkedin.com/in/connorunderwood2004"},
         {Name: "GitHub", Icon: "fab fa-github fa-lg", Link: "https://github.com/Connor-Underwood"},
     ]

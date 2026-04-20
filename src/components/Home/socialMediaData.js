@@ -1,9 +1,12 @@
 // Social media posts data
-import post1 from '../../assets/post-1.png';
-import post2 from '../../assets/post-2.png';
-import post3 from '../../assets/post-3.png';
-import post4 from '../../assets/post-4.png';
-import post5 from '../../assets/post-5.png';
+import post1 from '../../assets/social_media_posts/post-1.png';
+import post2 from '../../assets/social_media_posts/post-2.png';
+import post3 from '../../assets/social_media_posts/post-3.png';
+import post4 from '../../assets/social_media_posts/post-4.png';
+import post5 from '../../assets/social_media_posts/post-5.png';
+import firstHikeSecondHike from '../../assets/videos/firstHikeSecondHike.mp4';
+import interview from '../../assets/videos/interview.mp4';
+import ack from '../../assets/videos/ack.mp4';
 
 // To add video hover previews, add a `video` field with the imported video file:
 //   import video1 from '../../assets/video-1.mp4';
@@ -23,7 +26,7 @@ export const socialMediaPosts = [
     id: 2,
     platform: 'instagram',
     image: post2,
-    video: null,
+    video: interview,
     icon: 'fab fa-instagram',
     platformColor: '#ec4899',
     title: '',
@@ -32,7 +35,7 @@ export const socialMediaPosts = [
     id: 3,
     platform: 'instagram',
     image: post3,
-    video: null,
+    video: firstHikeSecondHike,
     icon: 'fab fa-instagram',
     platformColor: '#ec4899',
     title: '',
@@ -41,7 +44,7 @@ export const socialMediaPosts = [
     id: 4,
     platform: 'instagram',
     image: post4,
-    video: null,
+    video: ack,
     icon: 'fab fa-instagram',
     platformColor: '#ec4899',
     title: '',
@@ -58,9 +61,9 @@ export const socialMediaPosts = [
 ];
 
 export const socialStats = {
-  totalFollowers: '50k+',
+  totalFollowers: '81k+',
   platforms: [
-    { name: 'TikTok', followers: '24.2k', icon: 'fab fa-tiktok', color: '#ffffff' },
-    { name: 'Instagram', followers: '27.3k', icon: 'fab fa-instagram', color: '#ec4899' }
+    { name: 'TikTok', followers: '40.7k', icon: 'fab fa-tiktok', color: '#ffffff' },
+    { name: 'Instagram', followers: '40.3k', icon: 'fab fa-instagram', color: '#ec4899' }
   ]
 };

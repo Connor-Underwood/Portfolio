@@ -2,7 +2,7 @@
 
 export const credentials = {
   title: "Learn from a Google Engineer",
-  subtitle: "Get personalized mentorship from someone who's been there",
+  subtitle: "Get personalized tutoring from someone who's been there",
   achievements: [
     {
       icon: "fas fa-briefcase",
@@ -11,7 +11,7 @@ export const credentials = {
     },
     {
       icon: "fas fa-users",
-      stat: "50k",
+      stat: "80k",
       suffix: "+",
       description: "Social Media Followers"
     },
@@ -60,7 +60,7 @@ export const pricingTiers = [
     id: "professional",
     name: "Professional Package",
     price: "$125",
-    duration: "3 Sessions",
+    duration: "4 sessions",
     description: "Best for interview prep and comprehensive career development",
     features: [
       "4 weekly 1-on-1 video calls",
@@ -70,17 +70,17 @@ export const pricingTiers = [
       "Priority scheduling"
     ],
     popular: false,
-    color: "bg-gradient-to-br from-indigo-500 to-purple-600",
-    hoverShadow: "hover:shadow-purple-500/30"
+    color: "bg-gradient-to-br from-indigo-500 to-indigo-700",
+    hoverShadow: "hover:shadow-indigo-500/30"
   },
   {
     id: "elite",
-    name: "Elite Mentorship",
+    name: "Elite Tutoring",
     price: "$250",
     duration: "6 Sessions",
     description: "Complete transformation package for serious career growth",
     features: [
-      "12 weekly 1-on-1 videos calls (3 months)",
+      "6 bi-weekly 1-on-1 video calls (12 weeks)",
       "Comprehensive interview preparation",
       "Multiple resume & portfolio reviews",
       "Coding practice & technical guidance",
@@ -88,7 +88,7 @@ export const pricingTiers = [
       "Personal branding strategy"
     ],
     popular: false,
-    color: "bg-gradient-to-br from-purple-500 to-pink-600",
-    hoverShadow: "hover:shadow-pink-500/30"
+    color: "bg-gradient-to-br from-indigo-600 to-slate-700",
+    hoverShadow: "hover:shadow-indigo-500/30"
   }
 ];

@@ -81,7 +81,7 @@ const BottomHalf = () => {
                                     animate={{opacity: 1, x: 0}}
                                     transition={{duration: 0.4, delay: 0.2}}
                                 >
-                                    <p className='font-bold text-xl sm:text-2xl md:text-3xl'>Mentorship</p>
+                                    <p className='font-bold text-xl sm:text-2xl md:text-3xl'>Tutoring</p>
                                     <div className='w-1 bg-indigo-500 h-8' />
                                 </motion.div>
 
