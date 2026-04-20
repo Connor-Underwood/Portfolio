@@ -1,106 +1,119 @@
-import React, { useRef, useState, useCallback } from 'react';
+import React, { useRef, useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { socialMediaPosts, socialStats } from './socialMediaData';
 
-const PhoneMockup = ({ post }) => {
-  const videoRef = useRef(null);
-  const hoverTimer = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+const PhoneScreen = ({ post, videoRef, showVideo }) => {
+  const hasVideo = !!post.video;
+  return (
+    <div className='relative w-full h-full bg-gray-950 rounded-[2rem] p-[6px] shadow-xl border-[2px] border-gray-800'>
+      {/* Dynamic Island */}
+      <div className='absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-full z-20' />
+      {/* Screen */}
+      <div className='relative w-full h-full bg-black rounded-[1.4rem] overflow-hidden'>
+        <img
+          src={post.image}
+          alt={`${post.platform} post`}
+          className='absolute inset-0 w-full h-full object-cover'
+        />
+        {hasVideo && (
+          <video
+            ref={videoRef}
+            src={post.video}
+            muted
+            loop
+            playsInline
+            className='absolute inset-0 w-full h-full object-cover transition-opacity duration-500'
+            style={{ opacity: showVideo ? 1 : 0 }}
+          />
+        )}
+        {/* Platform Badge */}
+        <div className='absolute top-6 right-3 bg-black/60 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1.5 z-10'>
+          <i className={`${post.icon} text-xs`} style={{ color: post.platformColor }} />
+          <span className='text-white text-[10px] font-semibold capitalize'>
+            {post.platform}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const PhoneMockup = ({ post, onHover, onLeave }) => {
+  const cardRef = useRef(null);
 
   const handleMouseEnter = useCallback(() => {
-    if (post.video) {
-      hoverTimer.current = setTimeout(() => {
-        setIsPlaying(true);
-        if (videoRef.current) {
-          videoRef.current.currentTime = 0;
-          videoRef.current.play();
-        }
-      }, 400);
+    if (post.video && cardRef.current) {
+      const rect = cardRef.current.getBoundingClientRect();
+      onHover(post, rect);
     }
-  }, [post.video]);
+  }, [post, onHover]);
 
   const handleMouseLeave = useCallback(() => {
-    clearTimeout(hoverTimer.current);
-    setIsPlaying(false);
-    if (post.video && videoRef.current) {
-      videoRef.current.pause();
-    }
-  }, [post.video]);
+    onLeave();
+  }, [onLeave]);
 
   return (
     <div
-      className='flex-shrink-0 relative'
+      ref={cardRef}
+      className='flex-shrink-0 cursor-pointer'
+      style={{ width: '180px', height: '360px' }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Phone Frame (always visible) */}
-      <div
-        className='relative w-[180px] h-[360px] sm:w-[200px] sm:h-[400px] bg-gray-950 rounded-[2rem] p-[6px] shadow-xl border-[2px] border-gray-800 cursor-pointer transition-shadow duration-300 hover:shadow-2xl hover:shadow-indigo-500/20'
-      >
-        {/* Dynamic Island */}
-        <div className='absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-full z-20' />
-
-        {/* Screen */}
-        <div className='relative w-full h-full bg-black rounded-[1.4rem] overflow-hidden'>
-          <img
-            src={post.image}
-            alt={`${post.platform} post`}
-            className='w-full h-full object-cover'
-          />
-
-          {/* Platform Badge */}
-          <div className='absolute top-6 right-3 bg-black/60 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1.5 z-10'>
-            <i className={`${post.icon} text-xs`} style={{ color: post.platformColor }} />
-            <span className='text-white text-[10px] font-semibold capitalize'>
-              {post.platform}
-            </span>
-          </div>
-        </div>
+      <div className='w-[180px] h-[360px] sm:w-[200px] sm:h-[400px]'>
+        <PhoneScreen post={post} />
       </div>
-
-      {/* Netflix-style pop-out video */}
-      <AnimatePresence>
-        {isPlaying && post.video && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.85 }}
-            transition={{ duration: 0.25, ease: 'easeOut' }}
-            className='absolute z-30 rounded-2xl overflow-hidden shadow-2xl shadow-black/60'
-            style={{
-              bottom: '100%',
-              left: '50%',
-              transform: 'translate(-50%, 0)',
-              marginBottom: '8px',
-              width: '260px',
-              height: '462px',
-            }}
-          >
-            <video
-              ref={videoRef}
-              src={post.video}
-              muted
-              loop
-              playsInline
-              className='w-full h-full object-cover'
-            />
-
-            {/* Platform Badge on pop-out */}
-            <div className='absolute top-3 right-3 bg-black/60 backdrop-blur-sm rounded-full px-2.5 py-1.5 flex items-center gap-1.5'>
-              <i className={`${post.icon} text-xs`} style={{ color: post.platformColor }} />
-              <span className='text-white text-xs font-semibold capitalize'>
-                {post.platform}
-              </span>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };
 
 const SocialMediaHero = () => {
   const scrollRef = useRef(null);
+  const videoRef = useRef(null);
+  const hoverTimer = useRef(null);
+  const [hoveredPost, setHoveredPost] = useState(null);
+  const [cardRect, setCardRect] = useState(null);
+  const [showVideo, setShowVideo] = useState(false);
+
+  // Play/pause video reactively when showVideo changes
+  useEffect(() => {
+    if (showVideo && videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play().catch(() => {});
+    } else if (!showVideo && videoRef.current) {
+      videoRef.current.pause();
+    }
+  }, [showVideo]);
+
+  // Ref callback so we know immediately when the video element mounts
+  const setVideoRef = useCallback((el) => {
+    videoRef.current = el;
+    if (el && showVideo) {
+      el.currentTime = 0;
+      el.play().catch(() => {});
+    }
+  }, [showVideo]);
+
+  const handleHover = useCallback((post, rect) => {
+    clearTimeout(hoverTimer.current);
+    setHoveredPost(post);
+    setCardRect(rect);
+    setShowVideo(false);
+    hoverTimer.current = setTimeout(() => {
+      setShowVideo(true);
+    }, 500);
+  }, []);
+
+  const handleLeave = useCallback(() => {
+    clearTimeout(hoverTimer.current);
+    setHoveredPost(null);
+    setCardRect(null);
+    setShowVideo(false);
+  }, []);
+
+  useEffect(() => {
+    return () => clearTimeout(hoverTimer.current);
+  }, []);
 
   const scroll = (direction) => {
     if (scrollRef.current) {
@@ -111,6 +124,23 @@ const SocialMediaHero = () => {
       });
     }
   };
+
+  // Calculate the expanded overlay position (centered on original card, scaled up)
+  const scale = 1.4;
+  let overlayStyle = {};
+  if (cardRect) {
+    const expandedW = cardRect.width * scale;
+    const expandedH = cardRect.height * scale;
+    overlayStyle = {
+      position: 'fixed',
+      top: cardRect.top + cardRect.height / 2 - expandedH / 2,
+      left: cardRect.left + cardRect.width / 2 - expandedW / 2,
+      width: expandedW,
+      height: expandedH,
+      zIndex: 9999,
+      pointerEvents: 'none',
+    };
+  }
 
   return (
     <div className='w-full max-w-5xl mx-auto'>
@@ -158,7 +188,11 @@ const SocialMediaHero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 * idx }}
             >
-              <PhoneMockup post={post} />
+              <PhoneMockup
+                post={post}
+                onHover={handleHover}
+                onLeave={handleLeave}
+              />
             </motion.div>
           ))}
         </div>
@@ -176,6 +210,26 @@ const SocialMediaHero = () => {
         <div className='absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white dark:from-gray-800 to-transparent pointer-events-none z-[5]' />
         <div className='absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white dark:from-gray-800 to-transparent pointer-events-none z-[5]' />
       </div>
+
+      {/* Fixed overlay — the expanded card rendered outside the scroll container */}
+      <AnimatePresence>
+        {hoveredPost && cardRect && (
+          <motion.div
+            key={hoveredPost.id}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            style={overlayStyle}
+          >
+            <PhoneScreen
+              post={hoveredPost}
+              videoRef={setVideoRef}
+              showVideo={showVideo}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* CTA */}
       <div className='text-center mt-6'>

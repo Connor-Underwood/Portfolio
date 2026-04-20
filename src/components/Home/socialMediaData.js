@@ -7,6 +7,7 @@ import post5 from '../../assets/social_media_posts/post-5.png';
 import firstHikeSecondHike from '../../assets/videos/firstHikeSecondHike.mp4';
 import interview from '../../assets/videos/interview.mp4';
 import ack from '../../assets/videos/ack.mp4';
+import college_students_watch from '../../assets/videos/college_students_watch.mov';
 
 // To add video hover previews, add a `video` field with the imported video file:
 //   import video1 from '../../assets/video-1.mp4';
@@ -53,7 +54,7 @@ export const socialMediaPosts = [
     id: 5,
     platform: 'instagram',
     image: post5,
-    video: null,
+    video: college_students_watch,
     icon: 'fab fa-instagram',
     platformColor: '#ec4899',
     title: '',
