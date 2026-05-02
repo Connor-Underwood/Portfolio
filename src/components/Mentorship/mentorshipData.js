@@ -63,7 +63,7 @@ export const pricingTiers = [
     duration: "4 sessions",
     description: "Best for interview prep and comprehensive career development",
     features: [
-      "4 weekly 1-on-1 video calls",
+      "4 weekly 1-on-1 video calls (1 month)",
       "Interview preparation & mock interviews",
       "Resume & LinkedIn optimization",
       "Ongoing support via email",
@@ -76,11 +76,11 @@ export const pricingTiers = [
   {
     id: "elite",
     name: "Elite Tutoring",
-    price: "$250",
-    duration: "6 Sessions",
+    price: "$300",
+    duration: "12 Sessions",
     description: "Complete transformation package for serious career growth",
     features: [
-      "6 bi-weekly 1-on-1 video calls (12 weeks)",
+      "12 weekly 1-on-1 video calls (3 months)",
       "Comprehensive interview preparation",
       "Multiple resume & portfolio reviews",
       "Coding practice & technical guidance",

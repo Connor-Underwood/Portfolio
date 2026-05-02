@@ -54,7 +54,7 @@ export const socialMediaPosts = [
     id: 5,
     platform: 'instagram',
     image: post5,
-    video: college_students_watch,
+    video: college_students_watch,   
     icon: 'fab fa-instagram',
     platformColor: '#ec4899',
     title: '',
@@ -62,7 +62,7 @@ export const socialMediaPosts = [
 ];
 
 export const socialStats = {
-  totalFollowers: '81k+',
+  totalFollowers: '80k+',
   platforms: [
     { name: 'TikTok', followers: '40.7k', icon: 'fab fa-tiktok', color: '#ffffff' },
     { name: 'Instagram', followers: '40.3k', icon: 'fab fa-instagram', color: '#ec4899' }
